@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DataDefinition>
+	<Element>
+		<source>
+			<sourcePath>C:\Users\TibcoProjects\Files\Input\Mexico\</sourcePath>
+			<sourceFilePattern>*</sourceFilePattern>
+		</source>
+		<target>
+			<targetPath>C:\Users\TibcoProjects\Files\Output\Mexico\</targetPath>
+		</target>
+		<messageSelector>MX</messageSelector>
+	</Element>
+	<Element>
+		<source>
+			<sourcePath>C:\Users\TibcoProjects\Files\Input\Spain\</sourcePath>
+			<sourceFilePattern>*</sourceFilePattern>
+		</source>
+		<target>
+			<targetPath>C:\Users\TibcoProjects\Files\Output\Spain\</targetPath>
+		</target>
+		<messageSelector>SP</messageSelector>
+	</Element>
+	<Element>
+		<source>
+			<sourcePath>C:\Users\TibcoProjects\Files\Input\USA\</sourcePath>
+			<sourceFilePattern>*</sourceFilePattern>
+		</source>
+		<target>
+			<targetPath>C:\Users\TibcoProjects\Files\Output\USA\</targetPath>
+		</target>
+		<messageSelector>USA</messageSelector>
+	</Element>
+</DataDefinition>
