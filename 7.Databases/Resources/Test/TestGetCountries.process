@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://www.tibco.com/schemas/1.Schemas/Resources/Schemas/Commons/Context" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/1.Schemas/Resources/Schemas/SharedProcesses/WriteToFileRequest" xmlns:ns2="http://www.tibco.com/schemas/1.Schemas/Resources/Schemas/Commons/Header" xmlns:ns3="http://www.tibco.com/schemas/7.Databases/Resources/Schemas/Services/GetCountriesRequest">
+    <xs:import xmlns:xs="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/schemas/7.Databases/Resources/Schemas/Services/GetCountriesRequest" schemaLocation="/Resources/Schemas/Services/GetCountriesRequest.xsd"/>
+    <pd:name>Resources/Test/TestGetCountries.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType ref=""/>
+    <pd:startX>68</pd:startX>
+    <pd:startY>90</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>520</pd:endX>
+    <pd:endY>79</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1769708931155</pd:targetNamespace>
+    <pd:activity name="GetCountries">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>286</pd:x>
+        <pd:y>182</pd:y>
+        <config>
+            <processName>/Processes/Services/Database/GetCountries.process</processName>
+        </config>
+        <pd:inputBindings>
+            <ns3:GetCountriesRequest>
+                <ns2:Header>
+                    <pfx:Context>
+                        <pfx:correlationId>
+                            <xsl:value-of select="'1234567'"/>
+                        </pfx:correlationId>
+                    </pfx:Context>
+                    <ns2:timestamp>
+                        <xsl:value-of select="current-dateTime()"/>
+                    </ns2:timestamp>
+                </ns2:Header>
+                <ns3:Body/>
+            </ns3:GetCountriesRequest>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>GetCountries</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>GetCountries</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>
